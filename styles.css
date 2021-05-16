@@ -70,20 +70,6 @@ body {
     
 }
 
-/*
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-  .fidget-image {
-        max-width: 320px;
-        min-width: 300px;
-        height: auto;
-    }
-
-    .fidget-image-container {
-        padding: 0;
-    }
-}
-*/
-
 .listen-button-container {
     display: flex;
     flex-direction: column;
@@ -98,11 +84,14 @@ body {
     height: 100px;
     object-fit: cover;
     opacity: 0.6;
-    transition: opacity .8s;
+    position: relative;
+    left: 0;
+    transition: opacity .8s, left ease 0.5s;
 }
 
 .listen-button:hover {
     opacity: 1;
+    left: 10px;
 }
 
 @media screen and (max-width: 768px) {
@@ -118,23 +107,15 @@ body {
     .listen-button {
         max-width: 90%;
         height: auto;
+        top: 0;
+        transition: opacity .8s, top ease 0.5s;
+    }
+
+    .listen-button:hover {
+        top: 10px;
+        left: 0;
     }
 }
-
-/*
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-  .listen-button-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0;
-  }
-  .listen-button {
-    max-width: 90px;
-    height: auto;
-}
-}
-*/
 
 
 /*Start of player section*/
@@ -163,10 +144,6 @@ body {
     justify-content: center;
 }
 
-audio {
-  
-}
-
 @media screen and (max-width: 768px) {
   .player-section {
     justify-content: center;
@@ -182,34 +159,12 @@ audio {
   }
 }
 
-/*
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-  .player-section {
-        justify-content: center;
-        flex-direction: column;
-        max-width: 320px;
-        padding: 1rem;
-        
-    }
-
-    .audio-title-container {
-        justify-content: center;
-        align-items: center;
-    }
-
-    .audio-player-container {
-        justify-content: center;
-    }
-}
-
-*/
-
 /*Description Section*/
 
 .description-section {
     width: calc(6rem + 600px);
     display: flex;
-    padding: 0 3rem 0 1rem;
+    padding: 0 1rem 0 1rem;
 }
 
 .description-container {
@@ -227,18 +182,28 @@ audio {
     }
 }
 
-/*
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-  .description-section {
-    max-width: 320px;
-    min-width: 300px;
-    height: auto;
-    padding: 0 0 1rem;
-    font-size: 1rem;
-    }
+/* start of the episode section */
+
+.episode-section {
+    width: calc(6rem + 600px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
 }
 
-*/
+#episode {
+    max-width: 500px;
+}
+
+@media screen and (max-width: 768px) {
+    .episode-section {
+        width: 100%;
+        padding: 1rem 0;
+        font-size: 1rem;
+    }
+}
 
 /* start of the social Section */
 
@@ -256,11 +221,15 @@ audio {
     height: 100px;
     object-fit: cover;
     opacity: 0.6;
-    transition: opacity 1s;
+    position: relative;
+    top: 0;
+    transition: opacity 1s, top ease 0.5s;
 }
 
 .social-button:hover {
     opacity: 1;
+    top: 10px;
+
 }
 
 .patreon-button {
@@ -268,12 +237,15 @@ audio {
     width: 200px;
     height: auto;
     object-fit: cover;
+    position: relative;
     opacity: 0.6;
-    transition: opacity 0.8s;
+    top: 0;
+    transition: opacity 0.8s, top ease 0.5s;
 }
 
 .patreon-button:hover {
     opacity: 1;
+    top: 10px;
 }
 
 @media screen and (max-width: 768px) {
@@ -282,8 +254,6 @@ audio {
         padding: 0 0 1rem 0;
         flex-wrap: wrap;
     }
-  
-  
   
     .social-button {
       padding: 1rem;
@@ -298,32 +268,6 @@ audio {
     }
 }
 
-/*
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-  .social-container {
-    max-width: 320px;
-    min-width: 300px;
-    height: auto;
-    flex-direction: row;
-    flex-flow: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 0 1rem 1rem;
-  }
-
-  .social-button {
-    padding: 1rem;
-    max-width: 90px;
-    height: auto;
-  }
-  
-  .patreon-button {
-    padding: 1rem;
-    max-width: 180px;
-    height: auto;
-  }
-}
-*/
 
 /*The below is for troubleshooting purposes*/
 
@@ -368,6 +312,10 @@ audio {
 
 .description-container {
     background-color: green;
+}
+
+.episode-section {
+    background-color: brown;
 }
 
 .social-container {
